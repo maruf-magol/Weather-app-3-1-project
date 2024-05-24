@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta name=""viewport" content="width=device-width", initial-scale="1.0" charset="UTF-8" > 
+    <title> Weather app</title>
+    <link rel="stylesheet" href="style2.css"  >
+</head>
+<body >
+
+   
+<body >
+
+    <div class="card">
+
+
+
+        <div class="another-page"  >
+        
+            <a href="index.html" >      <b>  <h3>হোম</h3></b></a>
+        
+        </div>
+    
+    
+    
+    
+        
+    
+        <div>
+                     <br>                
+    
+    
+    
+    
+        </div>
+    
+
+
+
+
+
+
+
+
+        <div class="search">
+            <input type="text" placeholder="Enter cily name i.e. Rajshahi"
+            spellcheck="false">
+            <button><img src="images/search.png" alt=""></button>
+    
+            
+    
+    
+    
+    
+    
+        </div>
+    
+        <div>
+                     <br>                
+    
+    
+    
+    
+        </div>
+
+
+
+
+        <div class="another-page">
+            <a href="manual-eng.html">     <b>  <h3>English Info</h3></b></a>
+          </div>
+        
+    
+    
+        
+    
+    
+    
+    
+    
+       
+    
+        <div class="error">
+            <p>
+                Invalid City name.
+            </p>
+        </div>
+    
+        <div class="weather">
+
+                   
+     
+
+
+            <img src="imageb/rain.png" class="weather-icon" >
+            <div>                   <br> </div>
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+    
+    
+    
+    
+    
+                
+                <div class="col">
+                   <img src="images/humidity.png" > 
+                   <div> 
+                    <p class="humidity">50%</p>
+                    <p>আর্দ্রতা</p>
+                   </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" > 
+                    <div> 
+                     <p class="wind">50কিমি/ঘন্টা</p>
+                     <p>বায়ুর গতিবেগ</p>
+                    </div>
+                </div>
+                
+    
+                <div class="col">
+                    <img src="images/feelslike.png">
+                    <div>
+                        <p class="Feels-Like">24°C</p>
+                        <p>অনুভূত<br>তাপমাত্রা</p> 
+                    </div>
+    
+                    
+                 </div>
+
+
+
+
+                 <div class="col">
+                    <img src="images/hi-temp.png">
+                    <div>
+                        <p class="hitemp">°C</p>
+                        <p>বর্তমান<br>সর্বোচ্চ<br>তাপমাত্রা</p> 
+                    </div>
+    
+                    
+                 </div>
+    
+    
+                 
+
+            <div class="col">
+                <img src="images/min-temp.png">
+                <div>
+                    <p class="mintemp">°C</p>
+                    <p>বর্তমান<br>সর্বনিম্ন<br>তাপমাত্রা</p> 
+                </div>
+
+                
+             </div>
+    
+    
+    
+    
+                
+    
+    
+    
+    
+    
+                 
+    
+            </div>
+        </div>
+    
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    
+        const apiKey = "89d74d9d5035e0455219d239dd5e3d4c";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const searchbox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const weatherIcn = document.querySelector(".weather-icon");
+    
+        async function checkWeather(city){
+    
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+            
+            if(response.status == 404){
+                document.querySelector(".error").style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+            }
+    
+    
+            else{
+    
+    
+                
+            var data = await response.json();
+    
+            
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp)  + "°C";
+            document.querySelector(".humidity").innerHTML = data.main.humidity +"%";
+            document.querySelector(".wind").innerHTML = data.wind.speed + " কিমি/ঘন্টা";
+            document.querySelector(".Feels-Like").innerHTML =Math.round(data.main.feels_like)  + "°C";
+            document.querySelector(".hitemp").innerHTML = Math.round(data.main.temp_max) + "°C";
+            document.querySelector(".mintemp").innerHTML = Math.round(data.main.temp_min) + "°C";
+
+
+    
+    
+            if(data.weather[0].main == "Clouds" ){
+                weatherIcn.src = "imageb/clouds.png";
+    
+                
+            }else if(data.weather[0].main == "Clear" ){
+                weatherIcn.src = "imageb/clear.png"
+    
+            }else if(data.weather[0].main == "Rain" ){
+                weatherIcn.src = "imageb/rain.png"
+    
+            }else if(data.weather[0].main == "Drizzle" ){
+                weatherIcn.src = "imageb/drizzle.png"
+    
+            }else if(data.weather[0].main == "Mist" ){
+                weatherIcn.src = "imageb/mist.png"
+    
+            }
+            
+            document.querySelector(".weather").style.display = "block";
+            document.querySelector(".error").style.display = "none";
+    
+    
+    
+    
+            }
+    
+    
+        }
+    searchBtn.addEventListener("click",()=>{
+    
+        checkWeather(searchbox.value);
+    
+    
+    } )
+        
+    
+    </script>
+    
+
+
+</body>
+</html>

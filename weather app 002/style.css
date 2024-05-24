@@ -1,0 +1,194 @@
+*{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'BenSen', sans-serif;
+
+        box-sizing: border-box;
+}
+
+body{
+      background:url('https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow:hidden;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+      
+
+
+}
+.card{
+      width: 90%;
+      max-width: 470%;
+      background: linear-gradient(135deg,#00feba,#5b548a);
+      color: #fff;
+      margin: 50px auto 0;
+      border-radius: 20px;
+      padding: 40px 35px;
+      text-align: center;
+
+
+
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+.search input{
+      border: 0;
+      outline: 0;
+      background: #ebfffc;
+      color: #555;
+      padding: 10px 25px;
+      height: 60px;
+      border-radius: 30px;
+      flex: 1;
+      margin-right: 16px;
+      font-size: 18px;
+
+}
+
+
+.search button{
+      border: 0;
+      outline: 0;
+      background: #ebfffc;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+ 
+}
+
+
+.search button img{
+      width: 16px;
+}
+
+
+
+
+
+
+
+
+
+.weather-icon{
+      width: 170px;
+      margin-top: 30px;
+}
+
+.weather h1{
+      font-size: 80px;
+      font-weight: 500;
+}
+
+.weather h2{
+      font-size: 45px;
+      font-weight: 400;
+      margin-top: -10px;
+
+}
+.details{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      margin-top: 50px;  
+}
+
+.col{
+      display: flex;
+      align-items: center;
+      text-align: left;
+}
+
+.col img{
+      width: 40px;
+      margin-right: 10px;
+}
+.humidity{
+      font-size: 28px;
+      margin-top: -6px;
+}
+
+.weather{
+      display: none;
+}
+
+.error{
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;;
+      margin-top: 10px;
+      display: none;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+* {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+    }
+    
+    /* Remove extra left and right margins, due to padding in columns */
+    .row {margin: 0 -5px;}
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 #222; /* this adds the "card" effect */
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+    
+    /* Responsive columns - one column layout (vertical) on small screens */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+
+
+
+
+
+    /*test*/
+
+ 
